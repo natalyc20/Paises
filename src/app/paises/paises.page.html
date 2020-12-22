@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Paises</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-reorder-group (ionreordergroup)="reordenarLista($event)" disabled="false">
+
+    <ion-list>
+      
+      <ion-item *ngFor="let paisesM of paisesM">
+
+        <ion-label>
+          
+          <ion-row>
+            <ion-col>
+              <ion-img [src]="paisesM.imageURL"> </ion-img>
+            </ion-col>
+            <ion-col style="text-align: left;">
+              {{paisesM.orden}}
+            </ion-col>
+            <ion-col>
+              {{paisesM.nombre}}
+            </ion-col>
+            <ion-col>
+              {{paisesM.oficialName}}
+            </ion-col>
+            <ion-col>
+              {{paisesM.s2}}
+            </ion-col>
+            <ion-col>
+              {{paisesM.s3}}
+            </ion-col>
+            <ion-col>
+              {{paisesM.codigo}}
+            </ion-col>
+
+            <ion-col>
+              <audio controls>
+                <source [src]="paisesM.himno" type="audio/mpeg">
+              </audio>
+            </ion-col>
+          </ion-row>
+
+        </ion-label>
+        <ion-reorder slot="end" class="ios hydrated">
+
+        </ion-reorder>
+      </ion-item>
+    </ion-list>
+
+  </ion-reorder-group>
+</ion-content>
